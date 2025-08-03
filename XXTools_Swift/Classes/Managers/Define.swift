@@ -23,4 +23,7 @@ var themColor: UIColor{
     return .systemGroupedBackground
 }
 
+// App Store ID，需要根据实际应用设置
+public let appstoreId = "1234567890"
+
 

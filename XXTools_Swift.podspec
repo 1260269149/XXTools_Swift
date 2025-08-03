@@ -34,16 +34,7 @@ XXTools_Swift是一个专为iOS开发设计的Swift工具库，包含了常用UI
    s.dependency 'SnapKit', '~> 5.6.0'
    s.dependency 'Localize-Swift', '~> 3.2'
    
-   # 定义默认的source_files，包含所有文件
+   # 包含所有类文件
    s.source_files = 'XXTools_Swift/Classes/**/*.{h,m,swift}'
-   
-   # 定义子模块
-   s.subspec 'Extension' do |extension|
-     extension.source_files = 'XXTools_Swift/Classes/Extension/**/*.{h,m,swift}'
-   end
-   
-   s.subspec 'Managers' do |managers|
-     managers.source_files = 'XXTools_Swift/Classes/Managers/**/*.{h,m,swift}'
-   end
    
 end

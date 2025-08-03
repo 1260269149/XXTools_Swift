@@ -35,3 +35,4 @@ Carthage/Build
 #
 # Pods/
 Example/XXTools_Swift.xcodeproj/project.pbxproj
+*.pbxproj

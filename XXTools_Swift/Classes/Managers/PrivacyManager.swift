@@ -12,7 +12,7 @@ import Contacts
 
 public class PrivacyManager: NSObject {
 
-    class func checkPhotoLibraryPermission(success: (()->())?) {
+    public static func checkPhotoLibraryPermission(success: (()->())?) {
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
         case .notDetermined:
@@ -37,7 +37,7 @@ public class PrivacyManager: NSObject {
         }
     }
     
-    class func checkCameraPermission(success: (()->())?) {
+    public static func checkCameraPermission(success: (()->())?) {
         let status = AVCaptureDevice.authorizationStatus(for: .video)
         switch status {
         case .notDetermined:
@@ -62,7 +62,7 @@ public class PrivacyManager: NSObject {
         }
     }
 
-    class func checkContactsPermission(success: (()->())?) {
+    public static func checkContactsPermission(success: (()->())?) {
         let status = CNContactStore.authorizationStatus(for: .contacts)
         switch status {
         case .notDetermined:
@@ -87,7 +87,7 @@ public class PrivacyManager: NSObject {
         }
     }
     
-    class func showPermissionDeniedAlert(title: String?, message: String) {
+    public static func showPermissionDeniedAlert(title: String?, message: String) {
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else {return}
         
         let alert = UIAlertController(title: title, message: message,preferredStyle: .alert).fitIPad(target: vc)

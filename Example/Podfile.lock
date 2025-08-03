@@ -9,14 +9,6 @@ PODS:
   - XXTools_Swift (0.1.2):
     - Localize-Swift (~> 3.2)
     - SnapKit (~> 5.6.0)
-    - XXTools_Swift/Extension (= 0.1.2)
-    - XXTools_Swift/Managers (= 0.1.2)
-  - XXTools_Swift/Extension (0.1.2):
-    - Localize-Swift (~> 3.2)
-    - SnapKit (~> 5.6.0)
-  - XXTools_Swift/Managers (0.1.2):
-    - Localize-Swift (~> 3.2)
-    - SnapKit (~> 5.6.0)
 
 DEPENDENCIES:
   - XXTools_Swift (from `../`)
@@ -33,7 +25,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  XXTools_Swift: 8fed50ed5b3da8012584e287d1e4b5a7ea115a68
+  XXTools_Swift: 72ea8156b35abcfab45b9c5cec04014a5800a02e
 
 PODFILE CHECKSUM: 224cfde25fbb1686dfddb554b16218156572dc87
 

@@ -11,13 +11,15 @@ import AVFoundation
 import StoreKit
 public class XXTools: NSObject {
     
-    static var appstoreId: String?
+    internal static var appstoreId: String = ""
+    internal static var themColor: UIColor = .white
     
-    static func config(appstoreId: String?){
+    public static func config(appstoreId: String = "", themColor: UIColor = .white){
         XXTools.appstoreId = appstoreId
+        XXTools.themColor = themColor
     }
     
-    static func call(telNum: String?){
+    public static func call(telNum: String?){
         guard let telNum = telNum, telNum.count > 0 else {
             XXTools.alertHint(title: local_phoneNumErr, msg: "")
             return
@@ -33,18 +35,18 @@ public class XXTools: NSObject {
             XXTools.alertHint(title: local_phoneNumErr, msg: "")
         }
     }
-    static func message(telNum: String?){
+    public static func message(telNum: String?){
         
         
     }
-    static func openQQ(qq: String){
+    public static func openQQ(qq: String){
         if let url = URL.init(string: "mqq://im/chat?chat_type=wpa&uin=\(qq)&version=1&src_type=web"){
             if UIApplication.shared.canOpenURL(url){
                 UIApplication.shared.open(url)
             }
         }
     }
-    static func alertHint(title: String, msg: String){
+    public static func alertHint(title: String, msg: String){
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else {return}
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert).fitIPad(target: vc)
         
@@ -54,7 +56,7 @@ public class XXTools: NSObject {
         
         vc.present(alert, animated: true, completion: nil)
     }
-    static func alertCoosePhotoOption(targetVC: UIViewController, albumBlock: (()->())?, cameraBlock: (()->())?){
+    public static func alertCoosePhotoOption(targetVC: UIViewController, albumBlock: (()->())?, cameraBlock: (()->())?){
         
         let alert = UIAlertController(title: local_settingAvatars, message: local_settingAvatarsHint, preferredStyle: .alert).fitIPad(target: targetVC)
         let album = UIAlertAction(title: local_album, style: .default) { _ in
@@ -69,7 +71,7 @@ public class XXTools: NSObject {
         alert.addAction(cancelAction)
         targetVC.present(alert, animated: true, completion: nil)
     }
-    static func jumpToComment(completed: (()->())?){
+    public static func jumpToComment(completed: (()->())?){
         
         let openStr = "itms-apps://itunes.apple.com/app/id\(appstoreId)?action=write-review"
         UIApplication.shared.open(URL.init(string: openStr)!, options: [:]) { openUrlSuc in
@@ -79,11 +81,11 @@ public class XXTools: NSObject {
             }
         }
     }
-    static func getCurrentVersion() -> String?{
+    public static func getCurrentVersion() -> String?{
         let dic = Bundle.main.infoDictionary
         return dic?["CFBundleShortVersionString"] as? String
     }
-    static func getAppstoreVersion(callBack: @escaping(_: String?)->()){
+    public static func getAppstoreVersion(callBack: @escaping(_: String?)->()){
         
         let appidUrl = "http://itunes.apple.com/lookup?id=\(appstoreId)"
 
@@ -104,13 +106,13 @@ public class XXTools: NSObject {
             }
         }
     }
-    static func popToComment(){
+    public static func popToComment(){
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 15) {
             SKStoreReviewController.requestReview()
         }
     }
     
-    static func share(targetVC: UIViewController, appId: String){
+    public static func share(targetVC: UIViewController, appId: String){
         let shareImg = "icon".toImage() ?? UIImage()
         let linkUrl = URL(string: "https://apps.apple.com/cn/app/id\(appId)")
         var activityItems = [Any]()
@@ -139,23 +141,23 @@ public class XXTools: NSObject {
     ///   - maxH: 最大高度
     ///   - attributes: 字符串属性
     /// - Returns: CGSize
-    static func calculateStringSize(str: String, maxW: CGFloat, maxH: CGFloat, attributes: [NSAttributedString.Key: Any]?) -> CGSize{
+    public static func calculateStringSize(str: String, maxW: CGFloat, maxH: CGFloat, attributes: [NSAttributedString.Key: Any]?) -> CGSize{
         
         let ocStr = str as NSString
         let size = ocStr.boundingRect(with: CGSize.init(width: maxW, height: maxH), options: .usesLineFragmentOrigin, attributes: attributes, context: nil).size
         return size
     }
     
-    static func xx_afterTimeRunAction(time:TimeInterval = 2, _ cancleBlock: (()->())?)  {
+    public static func afterTimeRunAction(time:TimeInterval = 2, _ cancleBlock: (()->())?)  {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
             cancleBlock?()
         }
     }
     
-    static func getDeviceName() -> String{
+    public static func getDeviceName() -> String{
         return UIDevice.current.name
     }
-    static func getUUID() -> String?{
+    public static func getUUID() -> String?{
         return UIDevice.current.identifierForVendor?.uuidString
     }
    

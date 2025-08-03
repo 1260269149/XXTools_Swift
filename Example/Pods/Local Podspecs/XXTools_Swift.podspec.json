@@ -34,15 +34,5 @@
     ]
   },
   "source_files": "XXTools_Swift/Classes/**/*.{h,m,swift}",
-  "subspecs": [
-    {
-      "name": "Extension",
-      "source_files": "XXTools_Swift/Classes/Extension/**/*.{h,m,swift}"
-    },
-    {
-      "name": "Managers",
-      "source_files": "XXTools_Swift/Classes/Managers/**/*.{h,m,swift}"
-    }
-  ],
   "swift_version": "5.0"
 }

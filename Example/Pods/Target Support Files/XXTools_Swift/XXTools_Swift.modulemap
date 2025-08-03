@@ -1,0 +1,6 @@
+framework module XXTools_Swift {
+  umbrella header "XXTools_Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

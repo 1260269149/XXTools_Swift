@@ -1,0 +1,16 @@
+PODS:
+  - XXTools_Swift (0.1.0)
+
+DEPENDENCIES:
+  - XXTools_Swift (from `../`)
+
+EXTERNAL SOURCES:
+  XXTools_Swift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  XXTools_Swift: 38ca88b89d7d9e201aa705ed1e2beeeb860cf7db
+
+PODFILE CHECKSUM: 7a07710c640cb978baee6d85eda8923bb96b05aa
+
+COCOAPODS: 1.16.2

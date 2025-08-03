@@ -1,0 +1,22 @@
+{
+  "name": "XXTools_Swift",
+  "version": "0.1.0",
+  "summary": "A short description of XXTools_Swift.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/26767347/XXTools_Swift",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "26767347": "1260269149@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/26767347/XXTools_Swift.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "XXTools_Swift/Classes/**/*"
+}

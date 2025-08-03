@@ -50,7 +50,7 @@ public extension UIBarButtonItem {
         self.handler = handler
     }
     
-    private @objc private func didTapedBarButton() {
+    @objc private func didTapedBarButton() {
         self.handler?()
     }
     

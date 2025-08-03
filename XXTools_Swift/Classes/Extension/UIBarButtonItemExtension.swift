@@ -9,7 +9,7 @@
 import UIKit
 public extension UIBarButtonItem {
     
-    func wx_setFontSize(fontSize:CGFloat) {
+    func xx_setFontSize(fontSize:CGFloat) {
         self.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: fontSize)], for: .normal)
     }
 

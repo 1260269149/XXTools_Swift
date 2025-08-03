@@ -94,7 +94,7 @@ public extension UITableView {
         return tableView
     }
     
-//    func wx_endRefreshing(){
+//    func xx_endRefreshing(){
 //        if let header = self.mj_header{
 //            header.endRefreshing()
 //        }
@@ -103,7 +103,7 @@ public extension UITableView {
 //        }
 //        
 //    }
-//    func wx_add_mj_header(){
+//    func xx_add_mj_header(){
 //
 //        self.mj_header = RefreshHeader(refreshingBlock: {
 //            if let vc = self.delegate as? BaseViewController{
@@ -114,7 +114,7 @@ public extension UITableView {
 //                        self.emptyDataSetDelegate = vc
 //                    }
 //
-//                    self.wx_endRefreshing()
+//                    self.xx_endRefreshing()
 //                    self.setFooterStatus()
 //                    if isSuc{
 //                        self.reloadData()
@@ -122,15 +122,15 @@ public extension UITableView {
 //
 //                }
 //                vc.pageNumber = 1
-//                vc.wx_getData(isFooterAdd: false)
+//                vc.xx_getData(isFooterAdd: false)
 //            }
 //        })
 //    }
-//    func wx_add_mj_footer(){
+//    func xx_add_mj_footer(){
 //        self.mj_footer = RefreshFooter(refreshingBlock: {
 //            if let vc = self.delegate as? BaseViewController{
 //                vc.wxHttpCompleteBlock = { isSuc, res, err in
-//                    self.wx_endRefreshing()
+//                    self.xx_endRefreshing()
 //                    self.setFooterStatus()
 //                    if isSuc{
 //                        self.reloadData()
@@ -138,7 +138,7 @@ public extension UITableView {
 //                }
 //                if vc.pageNumber <= vc.totalPage {
 //                    vc.pageNumber += 1
-//                    vc.wx_getData(isFooterAdd: true)
+//                    vc.xx_getData(isFooterAdd: true)
 //                }
 //            }
 //        })

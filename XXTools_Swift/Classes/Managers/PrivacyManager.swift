@@ -10,7 +10,7 @@ import Photos
 import AVFoundation
 import Contacts
 
-class PrivacyManager: NSObject {
+public class PrivacyManager: NSObject {
 
     class func checkPhotoLibraryPermission(success: (()->())?) {
         let status = PHPhotoLibrary.authorizationStatus()

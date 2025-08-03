@@ -8,16 +8,15 @@
 
 import UIKit
 
-let screenWidth = UIScreen.main.bounds.width
-let screenHeight = UIScreen.main.bounds.height
-let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
-let navigationBarHeight: CGFloat = 44
-let allNavHeight = statusBarHeight + navigationBarHeight
-let isIphoneX = statusBarHeight > 20
-var bottomSafeAreaHeight: CGFloat = isIphoneX ? 34 : 0
-let tabBarHeight: CGFloat = 49 //+ bottomSafeAreaHeight
-let themFontSize: CGFloat = 18// 计算记录是主要字体
-let appstoreId = "6742146177"
+public let screenWidth = UIScreen.main.bounds.width
+public let screenHeight = UIScreen.main.bounds.height
+public let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+public let navigationBarHeight: CGFloat = 44
+public let allNavHeight = statusBarHeight + navigationBarHeight
+public let isIphoneX = statusBarHeight > 20
+public var bottomSafeAreaHeight: CGFloat = isIphoneX ? 34 : 0
+public let tabBarHeight: CGFloat = 49 //+ bottomSafeAreaHeight
+public let themFontSize: CGFloat = 18// 计算记录是主要字体
 
 var themColor: UIColor{
     

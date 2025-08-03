@@ -50,7 +50,7 @@ public extension UIButton {
 //        }
 //    }
     
-    static func wx_createButton(image: UIImage? = nil, title: String? = "", titleColor: UIColor? = .blue, fontSize: CGFloat = 15, backColor: UIColor? = .clear, borderColor: UIColor? = .clear, cornerRadius: CGFloat? = nil, touchHandle: ((_ btn: UIButton?) -> Swift.Void)?) -> UIButton{
+    static func xx_createButton(image: UIImage? = nil, title: String? = "", titleColor: UIColor? = .blue, fontSize: CGFloat = 15, backColor: UIColor? = .clear, borderColor: UIColor? = .clear, cornerRadius: CGFloat? = nil, touchHandle: ((_ btn: UIButton?) -> Swift.Void)?) -> UIButton{
 
         return createButton(image: image, title: title, titleColor: titleColor, font: UIFont.systemFont(ofSize: fontSize), backColor: backColor, borderColor: borderColor, cornerRadius: cornerRadius, touchHandle: touchHandle)
     }
@@ -65,7 +65,7 @@ public extension UIButton {
         button.layer.borderColor = borderColor?.cgColor
         button.layer.masksToBounds = true
         button.layer.cornerRadius = cornerRadius ?? 0
-        button.wx_addSelectedTap {(b) in
+        button.xx_addSelectedTap {(b) in
             touchHandle?(b as? UIButton)
         }
         return button

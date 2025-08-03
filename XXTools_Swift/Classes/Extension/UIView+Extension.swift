@@ -25,7 +25,7 @@ public extension UIView{
             v.removeFromSuperview()
         }
     }
-    func wx_addSelectedTap(handler: ((_ view:UIView?)->())?) {
+    func xx_addSelectedTap(handler: ((_ view:UIView?)->())?) {
         
         self.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self) { (tap) in
@@ -33,7 +33,7 @@ public extension UIView{
         }
         self.addGestureRecognizer(tap)
     }
-    func wx_addLongTap(handler: ((_ view:UIView?)->())?){
+    func xx_addLongTap(handler: ((_ view:UIView?)->())?){
         self.isUserInteractionEnabled = true
         let longTap = UILongPressGestureRecognizer(target: self) { (longTap) in
             handler?(longTap.view)
@@ -42,7 +42,7 @@ public extension UIView{
     }
     
     @discardableResult
-    func wx_addButtomLine(left:CGFloat = 0 ,right:CGFloat = 0, color: UIColor? = .groupTableViewBackground) -> UIView {
+    func xx_addButtomLine(left:CGFloat = 0 ,right:CGFloat = 0, color: UIColor? = .groupTableViewBackground) -> UIView {
         var line = self.viewWithTag(9999991) as? UILabel
         if line != nil {
             line?.snp.updateConstraints({
@@ -66,7 +66,7 @@ public extension UIView{
         }
     }
     @discardableResult
-    func wx_addTopLine(left:CGFloat = 0 ,right:CGFloat = 0, color: UIColor? = .systemGroupedBackground) -> UIView {
+    func xx_addTopLine(left:CGFloat = 0 ,right:CGFloat = 0, color: UIColor? = .systemGroupedBackground) -> UIView {
         var line = self.viewWithTag(9999992) as? UILabel
         if line != nil {
             line?.snp.updateConstraints({
@@ -90,13 +90,13 @@ public extension UIView{
         }
     }
     ///设置边框
-    func wx_border(borderColor:UIColor = .black, borderWidth: CGFloat = 1)  {
+    func xx_border(borderColor:UIColor = .black, borderWidth: CGFloat = 1)  {
         self.layer.borderColor = borderColor.cgColor
         self.layer.borderWidth = borderWidth
     }
     
     ///设置圆角和边框
-    func wx_cornerAndBorder(cornerRadius: CGFloat, masksToBounds: Bool = true, borderColor:UIColor, borderWidth: CGFloat = 1)  {
+    func xx_cornerAndBorder(cornerRadius: CGFloat, masksToBounds: Bool = true, borderColor:UIColor, borderWidth: CGFloat = 1)  {
         self.layer.masksToBounds = masksToBounds
         self.layer.cornerRadius = cornerRadius
         self.layer.borderColor = borderColor.cgColor
@@ -105,7 +105,7 @@ public extension UIView{
     
     /// 增加部分圆角
     @discardableResult
-    func wx_addCorner(radius:CGFloat, corners: UIRectCorner? = nil) -> CALayer {
+    func xx_addCorner(radius:CGFloat, corners: UIRectCorner? = nil) -> CALayer {
         let maskPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners:corners != nil ? corners! : [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadii: CGSize(width: radius, height: radius))
         let maskLayer = CAShapeLayer()
         maskLayer.frame = self.bounds
@@ -118,7 +118,7 @@ public extension UIView{
     /// - Parameter radii: <#radii description#>
     /// - Returns: <#return value description#>
     @discardableResult
-    func wx_addTopCorner(radius:CGFloat) -> CALayer {
+    func xx_addTopCorner(radius:CGFloat) -> CALayer {
         let corners:UIRectCorner = [UIRectCorner.topRight,UIRectCorner.topLeft]
         let maskPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners:corners, cornerRadii: CGSize(width: radius, height: radius))
         let maskLayer = CAShapeLayer()
@@ -129,7 +129,7 @@ public extension UIView{
     }
     
     @discardableResult
-    func wx_addLeftCorner(radius:CGFloat,size:CGSize) -> CALayer {
+    func xx_addLeftCorner(radius:CGFloat,size:CGSize) -> CALayer {
         let tempFrame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         let corners:UIRectCorner = [UIRectCorner.bottomLeft,UIRectCorner.topLeft]
         let maskPath = UIBezierPath(roundedRect: tempFrame, byRoundingCorners:corners, cornerRadii: CGSize(width: radius, height: radius))
@@ -141,7 +141,7 @@ public extension UIView{
     }
     
     @discardableResult
-    func wx_addRightCorner(radius:CGFloat,size:CGSize) -> CALayer {
+    func xx_addRightCorner(radius:CGFloat,size:CGSize) -> CALayer {
         let tempFrame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         let corners:UIRectCorner = [UIRectCorner.bottomRight,UIRectCorner.topRight]
         let maskPath = UIBezierPath(roundedRect: tempFrame, byRoundingCorners:corners, cornerRadii: CGSize(width: radius, height: radius))
@@ -152,7 +152,7 @@ public extension UIView{
         return maskLayer
     }
     @discardableResult
-    func wx_addBottomCorner(radius:CGFloat) -> CALayer {
+    func xx_addBottomCorner(radius:CGFloat) -> CALayer {
         let corners:UIRectCorner = [UIRectCorner.bottomLeft,UIRectCorner.bottomRight]
         let maskPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners:corners, cornerRadii: CGSize(width: radius, height: radius))
         let maskLayer = CAShapeLayer()
@@ -163,7 +163,7 @@ public extension UIView{
     }
     
     /// 水平渐变
-    func wx_horizontalGradientLayer(colors: [CGColor], cornerRadius:CGFloat) {
+    func xx_horizontalGradientLayer(colors: [CGColor], cornerRadius:CGFloat) {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds
         
@@ -179,7 +179,7 @@ public extension UIView{
     }
     
     /// 垂直渐变
-    func wx_verticalGradientLayer(colors: [CGColor], cornerRadius:CGFloat) {
+    func xx_verticalGradientLayer(colors: [CGColor], cornerRadius:CGFloat) {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds
         
@@ -201,7 +201,7 @@ public extension UIView{
     ///   - shadowOffset: 相对于左上角的偏移
     ///   - shadowOpacity: 透明度（0~1）
     ///   - shadowRadius: 阴影半径
-    func wx_shadow( shadowColor:UIColor, shadowOffset:CGSize, shadowOpacity:Float, shadowRadius:CGFloat) {
+    func xx_shadow( shadowColor:UIColor, shadowOffset:CGSize, shadowOpacity:Float, shadowRadius:CGFloat) {
         self.layer.shadowColor = shadowColor.cgColor
         self.layer.shadowOpacity = shadowOpacity
         self.layer.shadowRadius = shadowRadius
@@ -209,7 +209,7 @@ public extension UIView{
     }
     
     ///给View添加阴影和边框
-    func wx_shadowBorder( shadowColor:UIColor, shadowOffset:CGSize, shadowOpacity:Float, shadowRadius:CGFloat, borderColor: UIColor) {
+    func xx_shadowBorder( shadowColor:UIColor, shadowOffset:CGSize, shadowOpacity:Float, shadowRadius:CGFloat, borderColor: UIColor) {
         self.layer.shadowColor = shadowColor.cgColor
         self.layer.shadowOpacity = shadowOpacity
         self.layer.shadowRadius = shadowRadius
@@ -219,7 +219,7 @@ public extension UIView{
     }
     
     ///获取当前View的控制器
-    func wx_viewGetcurrentVC() -> UIViewController? {
+    func xx_viewGetcurrentVC() -> UIViewController? {
         var nextResponder: UIResponder? = self
         repeat {
             nextResponder = nextResponder?.next
@@ -232,7 +232,7 @@ public extension UIView{
     }
     
     ///view转图片
-    func wx_viewToImage() -> UIImage {
+    func xx_viewToImage() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
         self.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -387,7 +387,7 @@ public extension UIView {
 fileprivate extension UIView {
     
     /// 点击手势(默认代理和target相同)
-    func wx_longGesture(target: Any?, action: Selector, numberOfTapsRequired: Int = 1) {
+    func xx_longGesture(target: Any?, action: Selector, numberOfTapsRequired: Int = 1) {
         let tapGesture = UITapGestureRecognizer(target: target, action: action)
         tapGesture.numberOfTapsRequired = numberOfTapsRequired
         tapGesture.delegate = target as? UIGestureRecognizerDelegate
@@ -396,7 +396,7 @@ fileprivate extension UIView {
     }
     
     /// 长按手势(默认代理和target相同)
-    func wx_longGesture( target: Any?, action: Selector, minDuration: TimeInterval = 0.5) {
+    func xx_longGesture( target: Any?, action: Selector, minDuration: TimeInterval = 0.5) {
         let longGesture = UILongPressGestureRecognizer(target: target, action: action)
         longGesture.minimumPressDuration = minDuration
         longGesture.delegate = target as? UIGestureRecognizerDelegate
@@ -405,7 +405,7 @@ fileprivate extension UIView {
     }
     
     /// 截图(带导航则用导航控制器的view或keywindow)
-    func wx_screenshotImage() -> UIImage? {
+    func xx_screenshotImage() -> UIImage? {
         UIGraphicsBeginImageContext(self.bounds.size)
         if self.responds(to: #selector(UIView.drawHierarchy(in:afterScreenUpdates:))) {
             self.drawHierarchy(in: self.bounds, afterScreenUpdates: false)

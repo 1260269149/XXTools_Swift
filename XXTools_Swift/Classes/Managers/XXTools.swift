@@ -9,11 +9,17 @@
 import UIKit
 import AVFoundation
 import StoreKit
-public class Tools: NSObject {
+public class XXTools: NSObject {
     
-    class func call(telNum: String?){
+    static var appstoreId: String?
+    
+    static func config(appstoreId: String?){
+        XXTools.appstoreId = appstoreId
+    }
+    
+    static func call(telNum: String?){
         guard let telNum = telNum, telNum.count > 0 else {
-            Tools.alertHint(title: local_phoneNumErr, msg: "")
+            XXTools.alertHint(title: local_phoneNumErr, msg: "")
             return
         }
         if let phoneUrl = URL(string: "tel://\(telNum)"){
@@ -21,24 +27,24 @@ public class Tools: NSObject {
                 
                 UIApplication.shared.open(phoneUrl)
             }else{
-                Tools.alertHint(title: local_deviceNotSupported, msg: "")
+                XXTools.alertHint(title: local_deviceNotSupported, msg: "")
             }
         }else{
-            Tools.alertHint(title: local_phoneNumErr, msg: "")
+            XXTools.alertHint(title: local_phoneNumErr, msg: "")
         }
     }
-    class func message(telNum: String?){
+    static func message(telNum: String?){
         
         
     }
-    class func openQQ(qq: String){
+    static func openQQ(qq: String){
         if let url = URL.init(string: "mqq://im/chat?chat_type=wpa&uin=\(qq)&version=1&src_type=web"){
             if UIApplication.shared.canOpenURL(url){
                 UIApplication.shared.open(url)
             }
         }
     }
-    class func alertHint(title: String, msg: String){
+    static func alertHint(title: String, msg: String){
         guard let vc = UIApplication.shared.keyWindow?.rootViewController else {return}
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert).fitIPad(target: vc)
         
@@ -48,7 +54,7 @@ public class Tools: NSObject {
         
         vc.present(alert, animated: true, completion: nil)
     }
-    class func alertCoosePhotoOption(targetVC: UIViewController, albumBlock: (()->())?, cameraBlock: (()->())?){
+    static func alertCoosePhotoOption(targetVC: UIViewController, albumBlock: (()->())?, cameraBlock: (()->())?){
         
         let alert = UIAlertController(title: local_settingAvatars, message: local_settingAvatarsHint, preferredStyle: .alert).fitIPad(target: targetVC)
         let album = UIAlertAction(title: local_album, style: .default) { _ in
@@ -63,7 +69,7 @@ public class Tools: NSObject {
         alert.addAction(cancelAction)
         targetVC.present(alert, animated: true, completion: nil)
     }
-    class func jumpToComment(completed: (()->())?){
+    static func jumpToComment(completed: (()->())?){
         
         let openStr = "itms-apps://itunes.apple.com/app/id\(appstoreId)?action=write-review"
         UIApplication.shared.open(URL.init(string: openStr)!, options: [:]) { openUrlSuc in
@@ -73,11 +79,11 @@ public class Tools: NSObject {
             }
         }
     }
-    class func getCurrentVersion() -> String?{
+    static func getCurrentVersion() -> String?{
         let dic = Bundle.main.infoDictionary
         return dic?["CFBundleShortVersionString"] as? String
     }
-    class func getAppstoreVersion(callBack: @escaping(_: String?)->()){
+    static func getAppstoreVersion(callBack: @escaping(_: String?)->()){
         
         let appidUrl = "http://itunes.apple.com/lookup?id=\(appstoreId)"
 
@@ -98,13 +104,13 @@ public class Tools: NSObject {
             }
         }
     }
-    class func popToComment(){
+    static func popToComment(){
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 15) {
             SKStoreReviewController.requestReview()
         }
     }
     
-    class func share(targetVC: UIViewController, appId: String){
+    static func share(targetVC: UIViewController, appId: String){
         let shareImg = "icon".toImage() ?? UIImage()
         let linkUrl = URL(string: "https://apps.apple.com/cn/app/id\(appId)")
         var activityItems = [Any]()
@@ -140,16 +146,16 @@ public class Tools: NSObject {
         return size
     }
     
-    class func wx_afterTimeRunAction(time:TimeInterval = 2, _ cancleBlock: (()->())?)  {
+    static func xx_afterTimeRunAction(time:TimeInterval = 2, _ cancleBlock: (()->())?)  {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
             cancleBlock?()
         }
     }
     
-    class func getDeviceName() -> String{
+    static func getDeviceName() -> String{
         return UIDevice.current.name
     }
-    class func getUUID() -> String?{
+    static func getUUID() -> String?{
         return UIDevice.current.identifierForVendor?.uuidString
     }
    

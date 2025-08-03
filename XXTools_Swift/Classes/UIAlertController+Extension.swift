@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension UIAlertController{
+public extension UIAlertController{
     
-    public func fitIPad(target: UIViewController)->UIAlertController{
+    func fitIPad(target: UIViewController)->UIAlertController{
         //适配 ipad
         let isIPad = UIDevice.current.name.contains("iPad")
         if isIPad{

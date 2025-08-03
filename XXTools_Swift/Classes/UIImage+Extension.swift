@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UIImage {
-    public class func `init`(color: UIColor, size: CGSize) -> UIImage? {
+public extension UIImage {
+    class func `init`(color: UIColor, size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContext(size)
         
         let context = UIGraphicsGetCurrentContext()
@@ -21,7 +21,7 @@ extension UIImage {
         return image
     }
     
-    public func ellipse() -> UIImage {
+    func ellipse() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         
         let context = UIGraphicsGetCurrentContext()
@@ -35,7 +35,7 @@ extension UIImage {
         return image ?? self;
     }
     
-    public func fixOrientation() -> UIImage {
+    func fixOrientation() -> UIImage {
         if imageOrientation != .up {
             UIGraphicsBeginImageContextWithOptions(size, false, scale)
             draw(in: CGRect(origin: .zero, size: size))
@@ -46,7 +46,7 @@ extension UIImage {
         return self
     }
     
-    public func render(with color: UIColor) -> UIImage? {
+    func render(with color: UIColor) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         color.setFill()
         let rect = CGRect(origin: .zero, size: size)
@@ -58,7 +58,7 @@ extension UIImage {
         return image
     }
     
-    public func resizeWith(_ size: CGSize) -> UIImage? {
+    func resizeWith(_ size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContext(size)
         draw(in: CGRect(origin: .zero, size: size))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -66,7 +66,7 @@ extension UIImage {
         return newImage
     }
     //修改图片颜色
-    public func imageWithTintColor(color : UIColor) -> UIImage?{
+    func imageWithTintColor(color : UIColor) -> UIImage?{
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         let context = UIGraphicsGetCurrentContext()
         context?.translateBy(x: 0, y: self.size.height)
@@ -82,7 +82,7 @@ extension UIImage {
     }
     
     // 创建一个指定大小颜色的image
-    public class func image(_ color: UIColor, size: CGSize) -> UIImage {
+    class func image(_ color: UIColor, size: CGSize) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
         let context = UIGraphicsGetCurrentContext()
@@ -97,7 +97,7 @@ extension UIImage {
     }
     
     // 压缩图片尺寸
-    public func scaleImageToSize(_ newSize: CGSize) -> UIImage {
+    func scaleImageToSize(_ newSize: CGSize) -> UIImage {
         if newSize.equalTo(self.size) {
             return self
         }
@@ -116,7 +116,7 @@ extension UIImage {
         // Return the new image.
         return newImage!
     }
-    public func resizeleImageAddWhiteArea(_ newSize: CGSize) -> UIImage {
+    func resizeleImageAddWhiteArea(_ newSize: CGSize) -> UIImage {
         //        // Create a graphics image context
         UIGraphicsBeginImageContext(newSize)
         
@@ -134,7 +134,7 @@ extension UIImage {
         return newImage!
     }
     //压缩图片质量
-    public func reduceImageWithPercent(_ percent: CGFloat) -> UIImage? {
+    func reduceImageWithPercent(_ percent: CGFloat) -> UIImage? {
         if let imageData = self.jpegData(compressionQuality: percent){
             //UIImageJPEGRepresentation(self, percent) {
             let newImage =  UIImage(data: imageData)

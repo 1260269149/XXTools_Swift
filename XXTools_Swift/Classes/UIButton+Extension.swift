@@ -50,7 +50,7 @@ public extension UIButton {
 //        }
 //    }
     
-    public static func wx_createButton(image: UIImage? = nil, title: String? = "", titleColor: UIColor? = .blue, fontSize: CGFloat = 15, backColor: UIColor? = .clear, borderColor: UIColor? = .clear, cornerRadius: CGFloat? = nil, touchHandle: ((_ btn: UIButton?) -> Swift.Void)?) -> UIButton{
+    static func wx_createButton(image: UIImage? = nil, title: String? = "", titleColor: UIColor? = .blue, fontSize: CGFloat = 15, backColor: UIColor? = .clear, borderColor: UIColor? = .clear, cornerRadius: CGFloat? = nil, touchHandle: ((_ btn: UIButton?) -> Swift.Void)?) -> UIButton{
 
         return createButton(image: image, title: title, titleColor: titleColor, font: UIFont.systemFont(ofSize: fontSize), backColor: backColor, borderColor: borderColor, cornerRadius: cornerRadius, touchHandle: touchHandle)
     }

@@ -36,11 +36,11 @@ extension UITableViewCell{
 //        return NSStringFromClass(self.classForCoder())
 //    }
 //}
-extension UICollectionReusableView {
-    public static var reuseID: String {
+public extension UICollectionReusableView {
+    static var reuseID: String {
         return NSStringFromClass(self.classForCoder())
     }
-    public static func reuseableForNib<T>(aClass: T.Type) -> T?{
+    static func reuseableForNib<T>(aClass: T.Type) -> T?{
         let name = String(describing: aClass)
         if Bundle.main.path(forResource: name, ofType: "nib") != nil{
             return UINib.init(nibName: name, bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
@@ -50,11 +50,11 @@ extension UICollectionReusableView {
     }
 }
 
-extension UITableViewHeaderFooterView {
-    public static var reuseID: String {
+public extension UITableViewHeaderFooterView {
+    static var reuseID: String {
         return NSStringFromClass(self.classForCoder())
     }
-    public static func headerFooterForNib<T>(aClass: T.Type) -> T?{
+    static func headerFooterForNib<T>(aClass: T.Type) -> T?{
         let name = String(describing: aClass)
         if Bundle.main.path(forResource: name, ofType: "nib") != nil{
             return UINib.init(nibName: name, bundle: nil).instantiate(withOwner: nil, options: nil).first as? T
@@ -62,7 +62,7 @@ extension UITableViewHeaderFooterView {
             fatalError("\(String(describing: aClass)) nib is not exist")
         }
     }
-    public static func headerFooterForClass<T>(aClass: T.Type) -> T?{
+    static func headerFooterForClass<T>(aClass: T.Type) -> T?{
         let name = String(describing: aClass)
         return UITableViewHeaderFooterView.init(reuseIdentifier: name) as? T
     }

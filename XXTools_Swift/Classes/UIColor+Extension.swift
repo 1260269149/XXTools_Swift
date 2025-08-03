@@ -8,12 +8,12 @@
 
 import UIKit
 
-extension UIColor{
+public extension UIColor{
     
-    public class func initWith(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 1) -> UIColor{
+    class func initWith(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 1) -> UIColor{
         return UIColor.init(red: r/255, green: g/255, blue: b/255, alpha: a)
     }
-    public convenience init(_ hex: UInt32) {
+    convenience init(_ hex: UInt32) {
         var red, green, blue, alpha: UInt32
         if hex > 0xffffff {
             blue = hex & 0x000000ff
@@ -29,7 +29,7 @@ extension UIColor{
         self.init(red: CGFloat(red) / (255.0), green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha) / 255.0)
     }
     /// 根据十六进制文字创建颜色
-    public class  func hexString(_ hexString:String,_ alpha:CGFloat = 1 ) -> UIColor {
+    class  func hexString(_ hexString:String,_ alpha:CGFloat = 1 ) -> UIColor {
         //处理数值
         var cString = hexString.uppercased().trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let length = (cString as NSString).length

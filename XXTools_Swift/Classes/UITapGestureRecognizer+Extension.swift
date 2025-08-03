@@ -11,7 +11,7 @@ import UIKit
 
 extension UITapGestureRecognizer {
     
-    public convenience init(target: Any?, handler: ((_ tap:UITapGestureRecognizer)->Void)?) {
+    convenience init(target: Any?, handler: ((_ tap:UITapGestureRecognizer)->Void)?) {
         self.init(target: nil, action: nil)
         self.addTarget(self, action: #selector(didTapedBarButton))
         self.boost_handler = handler
@@ -45,7 +45,7 @@ extension UITapGestureRecognizer {
     }
 }
 extension UILongPressGestureRecognizer{
-    public convenience init(target: Any?, handler: ((_ tap:UILongPressGestureRecognizer)->Void)?) {
+    convenience init(target: Any?, handler: ((_ tap:UILongPressGestureRecognizer)->Void)?) {
         self.init(target: nil, action: nil)
         self.addTarget(self, action: #selector(didTapedBarButton))
         self.boost_handler = handler

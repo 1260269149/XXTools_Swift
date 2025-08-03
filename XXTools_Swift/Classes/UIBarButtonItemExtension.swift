@@ -7,13 +7,13 @@
 //
 
 import UIKit
-extension UIBarButtonItem {
+public extension UIBarButtonItem {
     
-    public func wx_setFontSize(fontSize:CGFloat) {
+    func wx_setFontSize(fontSize:CGFloat) {
         self.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: fontSize)], for: .normal)
     }
 
-    class ClosureWrapper {
+    private class ClosureWrapper {
         var closure: (() -> Void)?
         
         init(_ closure: (() -> Void)?) {
@@ -25,7 +25,7 @@ extension UIBarButtonItem {
         static var HandlerKey = "HandlerKey"
     }
     
-    public var handler: (()->Void)? {
+    private var handler: (()->Void)? {
         get {
             let obj = objc_getAssociatedObject(self, &AssociatedKeys.HandlerKey) as? ClosureWrapper
             return obj?.closure
@@ -36,21 +36,21 @@ extension UIBarButtonItem {
         }
     }
     
-    public convenience init(image: UIImage?, style: UIBarButtonItem.Style, handler: (()->Void)?) {
+    convenience init(image: UIImage?, style: UIBarButtonItem.Style, handler: (()->Void)?) {
         self.init(image: image, style: style, target: nil, action: nil)
         self.target = self
         self.action = #selector(UIBarButtonItem.didTapedBarButton)
         self.handler = handler
     }
     
-    public convenience init(title: String?, style: UIBarButtonItem.Style, handler: (()->Void)?) {
+    convenience init(title: String?, style: UIBarButtonItem.Style, handler: (()->Void)?) {
         self.init(title: title, style: style, target: nil, action: nil)
         self.target = self
         self.action = #selector(UIBarButtonItem.didTapedBarButton)
         self.handler = handler
     }
     
-    @objc private func didTapedBarButton() {
+    private @objc private func didTapedBarButton() {
         self.handler?()
     }
     

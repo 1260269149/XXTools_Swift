@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UITableViewCell{
+public extension UITableViewCell{
     public class func tableCellFromNib<T>(_ aClass: T.Type) -> T {
         let name = String(describing: aClass)
         if Bundle.main.path(forResource: name, ofType: "nib") != nil {

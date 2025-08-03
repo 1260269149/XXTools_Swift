@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  XXTools_Swift
+
+  Created for Chinese (Simplified) localization.
+*/
+
+"宝!你还没有添加联系人" = "Honey,\n you still \n haven’t contact ";
+"立即添加" = "Add Contact";
+"联系人" = "Contact person";
+"通讯录" = "Contact";
+"添加联系人" = "Add Contact";
+"添加照片" = "Add picture";
+"姓名" = "Name";
+"电话" = "Phone";
+"请输入" = "Please input";
+"保存" = "Save";
+"成功" = "Success";
+"失败" = "Failure";
+"相册" = "Album";
+"拍照" = "Take a photo";
+"取消" = "Cancel";
+"确认" = "OK";
+"设置亲人头像" = "Setting avatar";
+"设置亲人头像以便查找亲人" = "Settings for relatives' avatars for easier identification of relatives";
+"去好评" = "Go to 'Like' ";
+"分享给朋友" = "Share with friends";
+"请选择头像" = "Choose Picture";
+"请输入姓名" = "Input name";
+"请输入电话号码" = "Input phone number";
+"设置" = "Setting";
+"去设置" = "To setting";
+"温馨提示" = "Warm reminder";
+"应用需要访问您的通讯录，请在设置中开启权限。" = "Your contacts list needs to be accessed for the application. Please enable the permission in the settings.";
+"一键通话，架起与老人沟通的桥梁" = "One-click call, set up a bridge of communication with the elderly";
+"无法拨打" = "Unable to make a call";
+"无效号码" = "Invalid number";
+"删除失败" = "Delete Error";
+"暂不" = "Not now";
+"需要通讯录权限" = "Need address book access";
+"请在设置中允许访问通讯录以导入联系人" = "Please allow access to contacts in Settings to import contacts";
+"需要相机权限" = "Require camera permissions";
+"请在设置中允许访问相机以拍摄照片" = "Please allow access to the camera in Settings to take photos";
+"需要相册权限" = "Need album permissions";
+"请在设置中允许访问相册以选择照片" = "Please allow access to albums in Settings to select photos";
+"设备不支持打电话" = "Device not supported";
+"号码不正确" = "The phone number is incorrect";
+
+
+"同开发者的其他app" = "Other apps developed by the same developer";
+"计算器" = "Calculator";
+"中国日历" = "Calender";
+"口算达人" = "MathAgent";
+"快递查询" = "Express";
+"摇色子" = "CastDice";
+"抛硬币" = "Coins";
+"掌上直尺" = "Straightedge";
+"天气王" = "Weather";
+"房贷计算器" = "Mortgage";
+"一键通话" = "ElderCall";

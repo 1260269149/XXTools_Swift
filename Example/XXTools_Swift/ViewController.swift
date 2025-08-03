@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import XXTools_Swift
 
 class ViewController: UIViewController {
 

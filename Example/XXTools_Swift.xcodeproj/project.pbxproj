@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		029A135C71DB01DA2A282CF6 /* Pods_XXTools_Swift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XXTools_Swift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		288974F090428454A433CB5D /* XXTools_Swift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XXTools_Swift.podspec; path = ../XXTools_Swift.podspec; sourceTree = "<group>"; };
+		288974F090428454A433CB5D /* XXTools_Swift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XXTools_Swift.podspec; path = ../XXTools_Swift.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		59E23A808DA0F7454501ED31 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5D9C0105914C820B2E9446E6 /* Pods_XXTools_Swift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XXTools_Swift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* XXTools_Swift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXTools_Swift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };

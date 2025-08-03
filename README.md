@@ -1,29 +1,61 @@
 # XXTools_Swift
 
-[![CI Status](https://img.shields.io/travis/26767347/XXTools_Swift.svg?style=flat)](https://travis-ci.org/26767347/XXTools_Swift)
-[![Version](https://img.shields.io/cocoapods/v/XXTools_Swift.svg?style=flat)](https://cocoapods.org/pods/XXTools_Swift)
-[![License](https://img.shields.io/cocoapods/l/XXTools_Swift.svg?style=flat)](https://cocoapods.org/pods/XXTools_Swift)
-[![Platform](https://img.shields.io/cocoapods/p/XXTools_Swift.svg?style=flat)](https://cocoapods.org/pods/XXTools_Swift)
+iOS开发常用工具类扩展库，提供UIKit组件扩展和实用工具方法
 
-## Example
+## 安装
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
-## Installation
-
-XXTools_Swift is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+### CocoaPods
 
 ```ruby
 pod 'XXTools_Swift'
 ```
 
-## Author
+**重要提示：** 本SDK依赖 `Localize-Swift`，如果遇到 `No such module 'Localize_Swift'` 错误，请确保：
 
-wangxu, 1260269149@qq.com
+1. **清理CocoaPods缓存：**
+   ```bash
+   pod cache clean --all
+   rm -rf ~/Library/Caches/CocoaPods
+   rm -rf Pods
+   rm -rf Podfile.lock
+   ```
 
-## License
+2. **重新安装：**
+   ```bash
+   pod install
+   ```
 
-XXTools_Swift is available under the MIT license. See the LICENSE file for more info.
+3. **如果仍有问题，手动添加依赖：**
+   ```ruby
+   pod 'XXTools_Swift'
+   pod 'Localize-Swift', '~> 3.2'
+   ```
+
+## 功能特性
+
+- UIKit组件扩展（UIView、UILabel、UIButton等）
+- 实用工具方法
+- 多语言支持
+- 隐私权限管理
+
+## 使用示例
+
+```swift
+import XXTools_Swift
+
+// 配置SDK
+XXTools.config(appstoreId: "your_app_id", themColor: .blue)
+
+// 使用工具方法
+XXTools.call(telNum: "1234567890")
+```
+
+## 版本历史
+
+- 0.1.2 - 修复访问控制问题，添加多语言支持
+- 0.1.1 - 基础功能实现
+- 0.1.0 - 初始版本
+
+## 许可证
+
+MIT License

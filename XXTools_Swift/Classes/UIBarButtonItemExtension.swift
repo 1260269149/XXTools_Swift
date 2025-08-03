@@ -9,7 +9,7 @@
 import UIKit
 extension UIBarButtonItem {
     
-    func wx_setFontSize(fontSize:CGFloat) {
+    public func wx_setFontSize(fontSize:CGFloat) {
         self.setTitleTextAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: fontSize)], for: .normal)
     }
 
@@ -25,7 +25,7 @@ extension UIBarButtonItem {
         static var HandlerKey = "HandlerKey"
     }
     
-    var handler: (()->Void)? {
+    public var handler: (()->Void)? {
         get {
             let obj = objc_getAssociatedObject(self, &AssociatedKeys.HandlerKey) as? ClosureWrapper
             return obj?.closure

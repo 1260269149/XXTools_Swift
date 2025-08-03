@@ -11,7 +11,7 @@ import UIKit
 extension UIScrollView {
     
     /// 截长屏Image
-    var captureLongImage: UIImage? {
+    public var captureLongImage: UIImage? {
         
         //记录当前的scrollView的偏移量和坐标
         let currentContentOffSet = self.contentOffset

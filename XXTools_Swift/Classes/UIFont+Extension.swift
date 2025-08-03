@@ -14,7 +14,7 @@ extension UIFont{
     ///
     /// - Parameter size: <#size description#>
     /// - Returns: <#return value description#>
-    class func mediumFont(size:CGFloat) -> UIFont? {
+    public class func mediumFont(size:CGFloat) -> UIFont? {
         let font = UIFont(name: "PingFangSC-Medium", size: size)
         return font
         
@@ -24,7 +24,7 @@ extension UIFont{
     ///
     /// - Parameter size: <#size description#>
     /// - Returns: <#return value description#>
-    class func regularFont(size:CGFloat) -> UIFont? {
+    public class func regularFont(size:CGFloat) -> UIFont? {
         let font = UIFont(name: "PingFangSC-Regular", size: size)
         return font
     }
@@ -33,7 +33,7 @@ extension UIFont{
     ///
     /// - Parameter size: <#size description#>
     /// - Returns: <#return value description#>
-    class func boldFont(size:CGFloat) -> UIFont? {
+    public class func boldFont(size:CGFloat) -> UIFont? {
         let font = UIFont.boldSystemFont(ofSize: size)//UIFont(name: "PingFang-SC-Bold", size: size)
         return font
         
@@ -42,7 +42,7 @@ extension UIFont{
     ///
     /// - Parameter size: <#size description#>
     /// - Returns: <#return value description#>
-    class func semiboldFont(size:CGFloat) -> UIFont? {
+    public class func semiboldFont(size:CGFloat) -> UIFont? {
         let font = UIFont(name: "PingFangSC-Semibold", size: size)
         return font
         
@@ -51,7 +51,7 @@ extension UIFont{
     ///
     /// - Parameter size: <#size description#>
     /// - Returns: <#return value description#>
-    class func lightFont(size:CGFloat) -> UIFont? {
+    public class func lightFont(size:CGFloat) -> UIFont? {
         let font = UIFont(name: "PingFangSC-Light", size: size)
         return font
     }

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIAlertController{
     
-    func fitIPad(target: UIViewController)->UIAlertController{
+    public func fitIPad(target: UIViewController)->UIAlertController{
         //适配 ipad
         let isIPad = UIDevice.current.name.contains("iPad")
         if isIPad{

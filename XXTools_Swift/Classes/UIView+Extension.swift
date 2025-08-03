@@ -9,10 +9,8 @@
 import UIKit
 import SnapKit
 
-extension UIView{
-    func printMe(){
-        print("打印 我")
-    }
+public extension UIView{
+    
     func removeSubviewsWithTags(_ tags: [Int]){
         self.subviews.forEach { (v) in
             tags.forEach({ tag in
@@ -279,6 +277,17 @@ public extension UIView {
         }
     }
     
+    var y:CGFloat {
+        get{
+            return frame.origin.y
+        }
+        set(newValue){
+            var tempFrame = frame
+            tempFrame.origin.y = newValue
+            frame = tempFrame
+        }
+    }
+    
     var centerX:CGFloat {
         get{
             return center.x
@@ -298,17 +307,6 @@ public extension UIView {
             var tempCenter = center
             tempCenter.y = newValue
             center = tempCenter
-        }
-    }
-    
-    var y:CGFloat {
-        get{
-            return frame.origin.y
-        }
-        set(newValue){
-            var tempFrame = frame
-            tempFrame.origin.y = newValue
-            frame = tempFrame
         }
     }
     
@@ -337,7 +335,7 @@ public extension UIView {
     }
     
     /// right值
-    var right: CGFloat {
+    public var right: CGFloat {
         get {
             return frame.origin.x + frame.size.width
         }
@@ -422,7 +420,7 @@ fileprivate extension UIView {
     }
 }
 
-extension UIView {
+public extension UIView {
     @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius

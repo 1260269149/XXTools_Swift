@@ -8,13 +8,13 @@
 import UIKit
 
 
-extension UIViewController{
+public extension UIViewController{
     
     func pushTo(vc: UIViewController){
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    func popTo(vc: UIViewController? = nil){
-        if let vc = vc{
+    func pop(_ toVc: UIViewController? = nil){
+        if let vc = toVc{
             self.navigationController?.popToViewController(vc, animated: true)
         }else{
             self.navigationController?.popViewController(animated: true)

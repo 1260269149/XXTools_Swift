@@ -14,7 +14,7 @@ extension Double{
     /// 最大保留的小数位数
     /// - Parameter maxFractionDigits: <#maxFractionDigits description#>
     /// - Returns: <#description#>
-    func formatNumber(maxFractionDigits: Int) -> String{
+    public func formatNumber(maxFractionDigits: Int) -> String{
         
         let multiplier = pow(10.0, Double(maxFractionDigits))
         let roundedNumber = (self * multiplier).rounded() / multiplier

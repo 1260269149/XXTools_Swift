@@ -12,7 +12,7 @@ import UIKit
 //import DZNEmptyDataSet
 
 extension UITableView {
-    func dequeueReusableCell<T: UITableViewCell>(with cellClass: T.Type, for indexPath: IndexPath) -> T {
+    public func dequeueReusableCell<T: UITableViewCell>(with cellClass: T.Type, for indexPath: IndexPath) -> T {
         let identifier = String(describing: cellClass)
         var cell = dequeueReusableCell(withIdentifier: identifier)
         if cell == nil {
@@ -21,7 +21,7 @@ extension UITableView {
         return cell as! T
     }
     
-    func dequeueReusableCell<T: UITableViewCell>(nib cellClass: T.Type, for indexPath: IndexPath) -> T {
+    public func dequeueReusableCell<T: UITableViewCell>(nib cellClass: T.Type, for indexPath: IndexPath) -> T {
         let identifier = String(describing: cellClass)
         var cell = dequeueReusableCell(withIdentifier: identifier)
         if cell == nil {
@@ -30,7 +30,7 @@ extension UITableView {
         return cell as! T
     }
     
-    func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>(class headerFooterClass: T.Type)->T?{
+    public func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>(class headerFooterClass: T.Type)->T?{
         let identifier = String(describing: headerFooterClass)
         var headerFooter = dequeueReusableHeaderFooterView(withIdentifier: identifier)
         if headerFooter == nil{
@@ -38,7 +38,7 @@ extension UITableView {
         }
         return headerFooter as? T
     }
-    func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>(nib headerFooterClass: T.Type)->T?{
+    public func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>(nib headerFooterClass: T.Type)->T?{
         let identifier = String(describing: headerFooterClass)
         var headerFooter = dequeueReusableHeaderFooterView(withIdentifier: identifier)
         if headerFooter == nil{
@@ -47,7 +47,7 @@ extension UITableView {
         return headerFooter as? T
     }
     
-    func registerNib<T: UITableViewCell>(from nib: T.Type) -> Void {
+    public func registerNib<T: UITableViewCell>(from nib: T.Type) -> Void {
         let identifier = String(describing: nib)
         self.register(UINib.init(nibName: identifier,
                                  bundle: Bundle.main),
@@ -61,12 +61,12 @@ extension UITableView {
     ///   - rowHeight: <#rowHeight description#>
     /// - Returns: <#description#>
     @discardableResult
-    static func createGourpTabAddFor(targetVC: UIViewController?, backColor: UIColor? = .systemGroupedBackground, rowHeight: CGFloat? = UITableView.automaticDimension) -> UITableView{
+    public static func createGourpTabAddFor(targetVC: UIViewController?, backColor: UIColor? = .systemGroupedBackground, rowHeight: CGFloat? = UITableView.automaticDimension) -> UITableView{
        
         return UITableView.createTab(targetVC: targetVC, backColor: backColor, rowHeight: rowHeight, style: .grouped)
     }
     @discardableResult
-    static func createPlainTabAddFor(targetVC: UIViewController?, backColor: UIColor? = .systemGroupedBackground, rowHeigit: CGFloat? = UITableView.automaticDimension) -> UITableView{
+    public static func createPlainTabAddFor(targetVC: UIViewController?, backColor: UIColor? = .systemGroupedBackground, rowHeigit: CGFloat? = UITableView.automaticDimension) -> UITableView{
         
         return UITableView.createTab(targetVC: targetVC, backColor: backColor, rowHeight: rowHeigit, style: .plain)
     }

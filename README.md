@@ -22,7 +22,7 @@ pod 'XXTools_Swift'
 
 ## Author
 
-26767347, 1260269149@qq.com
+wangxu, 1260269149@qq.com
 
 ## License
 

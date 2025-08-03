@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XXTools_Swift'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'iOS开发常用工具类扩展库，提供UIKit组件扩展和实用工具方法'
   s.description      = <<-DESC
 XXTools_Swift是一个专为iOS开发设计的Swift工具库，包含了常用UI组件的扩展方法，

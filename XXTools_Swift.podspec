@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XXTools_Swift'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'iOS开发常用工具类扩展库，提供UIKit组件扩展和实用工具方法'
 
 # This description is used to generate tags and improve search results.
